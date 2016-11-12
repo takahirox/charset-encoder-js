@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>charset-encoder-js</title>
+    <meta name="description" content="charset-encoder-js test">
+    <script src="./build/charsetencoder.min.js"></script>
+    <script>
+      function toHexStrings (array) {
+        var hexStringsArray = [];
+        for (var i = 0, il = array.length; i < il; i++) {
+          var value = array[i];
+          hexStringsArray.push('0x' + value.toString(16));
+        }
+        return hexStringsArray.join(',');
+      }
+
+      var inputArray = [
+        0x82, 0xa0,  // あ
+        0x82, 0xa2,  // い
+        0x82, 0xa4,  // う
+        0x82, 0xa6,  // え
+        0x82, 0xa8   // お
+      ];
+      var expected = 'あいうえお';
+
+      function run() {
+        var span = document.getElementById('result');
+        var encoder = new CharsetEncoder();
+        var str = '';
+        str += 'CharsetEncoder s2u()' + '<br />';
+        str += '<br />';
+        str += 'Input: [' + toHexStrings(inputArray) + ']<br />';
+        str += 'Expected: ' + expected + '<br />';
+        str += 'Output: ' + encoder.s2u(new Uint8Array(inputArray)) + '<br />';
+        span.innerHTML = str;
+      }
+    </script>
+  </head>
+  <body onload="run()">
+    <span id="result"></span>
+  </body>
+</html>

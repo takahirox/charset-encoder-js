@@ -14,3 +14,9 @@ var shiftJisArray = new Uint8Array([0x82, 0xa0, 0x82, 0xa2, 0x82, 0xa4]);
 console.log(encoder.s2u(shiftJisArray)); // あいう
 </script>
 ```
+
+## How to build
+```
+$ npm install
+$ npm run all
+```

@@ -1,3 +1,9 @@
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+  typeof define === 'function' && define.amd ? define(['exports'], factory) :
+  (factory((global.window = global.window || {})));
+}(this, (function (exports) { 'use strict';
+
 /**
  * @author Takahiro / https://github.com/takahirox
  *
@@ -5,7 +11,7 @@
  */
 
 function CharsetEncoder() {
-};
+}
 
 /*
  * Converts from Shift_JIS Uint8Array data to Unicode strings.
@@ -9643,7 +9649,7 @@ CharsetEncoder.prototype.s2uTable = {
 64587:40657
 };
 
-export { CharsetEncoder };
+
 
 /*
 // table generator program
@@ -9702,3 +9708,9 @@ function runEnd() {
 var table = {};
 run(0);
 */
+
+exports.CharsetEncoder = CharsetEncoder;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));

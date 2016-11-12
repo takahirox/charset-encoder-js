@@ -1,0 +1,28 @@
+{
+  "name": "charset-encoder-js",
+  "version": "1.0.0",
+  "description": "Simple charset encoder with JavaScript",
+  "main": "build/charsetencoder.js",
+  "jsnext:main": "build/charsetencoder.module.js",
+  "scripts": {
+    "all": "npm run build && npm run build-uglify && npm run test",
+    "build": "rollup -c",
+    "build-uglify": "rollup -c && uglifyjs build/charsetencoder.js -cm --preamble \"// https://github.com/takahirox/charset-encoder-js#readme\" > build/charsetencoder.min.js",
+    "dev": "rollup -c -w",
+    "test": "node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takahirox/charset-encoder-js.git"
+  },
+  "author": "Takahiro <hogehoge@gachapin.jp> (https://github.com/takahirox)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/takahirox/charset-encoder-js/issues"
+  },
+  "homepage": "https://github.com/takahirox/charset-encoder-js#readme",
+  "devDependencies": {
+    "rollup": "^0.36.3",
+    "uglify-js": "^2.7.4"
+  }
+}
