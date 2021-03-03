@@ -1,6 +1,6 @@
 {
   "name": "charset-encoder-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple charset encoder with JavaScript",
   "main": "build/charsetencoder.js",
   "jsnext:main": "build/charsetencoder.module.js",
