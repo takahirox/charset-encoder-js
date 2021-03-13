@@ -32,7 +32,7 @@ CharsetEncoder.prototype.s2u = function(uint8Array) {
 
     if(t[key] === undefined) {
       console.warn('unknown char code ' + key + '.');
-      str += '�'
+      str += '�';
     }
     else{
       str += String.fromCharCode(t[key]);
