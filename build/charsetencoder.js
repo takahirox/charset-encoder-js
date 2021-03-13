@@ -31,11 +31,12 @@ CharsetEncoder.prototype.s2u = function(uint8Array) {
     }
 
     if(t[key] === undefined) {
-      console.error('unknown char code ' + key + '.');
-      return str;
+      console.warn('unknown char code ' + key + '.');
+      str += '�'
     }
-
-    str += String.fromCharCode(t[key]);
+    else{
+      str += String.fromCharCode(t[key]);
+    }
   }
 
   return str;
